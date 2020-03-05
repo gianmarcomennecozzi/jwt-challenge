@@ -1,0 +1,24 @@
+{{define "content"}}
+    <div class="navbar-nav ml-auto">
+        {{ if .User }}
+            <a class="nav-item nav-link" href="/logout">Logout</a>
+        {{ end }}
+    </div>
+    <div>
+        {{ with .Content }}
+            {{ if .CookieError }}
+                <div class="cookieError">{{ .CookieError}}</div>
+            {{ else }}
+                <div class="cookie">
+                    {{ .Cookie }}
+                </div>
+                <br>
+                {{ .User }}
+            {{ end }}
+        {{ end }}
+    </div>
+    <br>
+    {{ if .Flag }}
+        <div class="flag">{{ .Flag }}</div>
+    {{ end }}
+{{end}}

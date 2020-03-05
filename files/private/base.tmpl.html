@@ -3,20 +3,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script defer src="/assets/js/app.js"></script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link href=/assets/js/app.js rel=preload as=script>
+    <link href=/assets/js/fa.js rel=preload as=script>
+    <link href=/assets/js/chunk-vendors.js rel=preload as=script>
 </head>
 <body>
-<section class="section" style="background:#24406d; padding-bottom: 10px;">
-    <div class="container">
-        <div class="row">
-            <form method="post" action="/login">
-                <input class="input" name="user" type="text" placeholder="User">
-                <button class="btn">Login</button>
-            </form>
-        </div>
-        <br>
-        <div id="jwt-form"></div>
+    {{template "navbar" .}}
+    <div id="content">
+        {{ template "content" .}}
     </div>
-</section>
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted"></span>
+        </div>
+    </footer>
+    <script src=/assets/js/chunk-vendors.js></script>
+    <script src=/assets/js/app.js></script>
+    <script src=/assets/js/fa.js></script>
+    <script src=/assets/js/jquery.js></script>
+    <script src=/assets/js/bootstrap.js></script>
 </body>
 </html>

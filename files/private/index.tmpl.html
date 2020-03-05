@@ -1,0 +1,18 @@
+{{define "content"}}
+    <div class="container">
+        <div class="jumbotron vertically-center text-center">
+            <h3 class="display-4">Welcome to my website!</h3>
+            <p class="lead">You just need to log in to access the main page. You can use any name, other than admin... because the admin user gets a special page! </p>
+            <hr class="my-4">
+            <form method="POST" action="/login">
+                <div class="form-group">
+                    <input type="text" {{ with .Content }}{{ if .LoginError }} class="form-control is-invalid"{{end}}{{end}} class="form-control"  name="user" placeholder="Enter the Username">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-dark">Enter</button>
+                </div>
+            </form>
+            <p>You can use your nickname as a log in, because that's quick and easy to remember! If you don't like your nickname, use a short and cool one like JWT... </p>
+        </div>
+    </div>
+{{end}}
